@@ -4,23 +4,54 @@ using UnityEngine;
 
 public class AnimController : MonoBehaviour
 {
-    public Animation twerk;
-    public GameObject model;
+    #region Singleton
+    public static AnimController instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+
+        instance = this;
+    }
+    #endregion
+
+
+    public Animator model;
+    public Animation mModel;
+    public float animValue;
+    public AnimatorStateInfo m_CurrentStateInfo;
+    public float length;
 
     // Start is called before the first frame update
     void Start()
     {
-        FindObjectOfType<GameObject>().GetComponent<Animation>();
+        model.GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (animValue > 0)
+        {
+            animValue -= 1 * Time.deltaTime;
+            model.speed = 1;
+        }
+        else if (animValue <= 0)
+        {
+            animValue = 0;
+            model.speed = 0;
+        }
+
+        length = model.GetCurrentAnimatorStateInfo(0).length;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        twerk["Dancing Twerk"].time = 5.0f;
+        model.Play("Dancing Twerk");
+        model.speed = 0;
+        
     }
 }
