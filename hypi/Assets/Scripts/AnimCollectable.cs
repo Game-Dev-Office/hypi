@@ -6,6 +6,7 @@ public class AnimCollectable : MonoBehaviour
 {
     public static float currentLength;
     public float animationSpeed = 1f;
+    public float nLength;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,14 +16,20 @@ public class AnimCollectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (Test.instance.clipName == "Dancing Twerk")
+        {
+            currentLength = Test.instance.clipCurrentLength;
+        }
+        else if (Test.instance.clipName == "capoeira")
+        {
+            nLength = Test.instance.clipCurrentLength;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        AnimController.instance.animValue += 3;
+        Test.instance.clipCurrentLength = currentLength;
+        AnimController.instance.animValue += 2;
         Test.instance.model.Play("Dancing Twerk", 0, currentLength);
-        //Test.instance.model.SetLayerWeight(0, 1f);
-        currentLength += animationSpeed * Time.deltaTime;
     }
 }

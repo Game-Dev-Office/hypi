@@ -21,11 +21,8 @@ public class Test : MonoBehaviour
 
     
     public Animator model;
-    public float animationSpeed = 1f;
 
-    public float currentFrame;
     public float totalFrame;
-    public float frameLength;
     public float clipTotalLength;
     public float clipCurrentLength;
     public string clipName;
@@ -39,7 +36,6 @@ public class Test : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
         AnimatorStateInfo stateInfos = model.GetCurrentAnimatorStateInfo(0);
         AnimatorClipInfo[] AnimationClip = model.GetCurrentAnimatorClipInfo(0);
 
@@ -48,28 +44,7 @@ public class Test : MonoBehaviour
         clipCurrentLength = stateInfos.normalizedTime;
         clipName = AnimationClip[0].clip.name;
 
-        //currentFrame = (stateInfos.normalizedTime * (AnimationClip[0].clip.length * AnimationClip[0].clip.frameRate));
-
-
-
-        //Debug.Log(clipTotalLength);
-        //Debug.Log(totalFrame);
-        Debug.Log(clipName +" " +clipCurrentLength);
-
-        /*
-        AnimatorClipInfo[] AnimationClip = model.GetCurrentAnimatorClipInfo(0);
-        totalFrame = AnimationClip[0].clip.length * AnimationClip[0].clip.frameRate;
-        someValue = AnimationClip[0].weight;
-        AnimatorStateInfo stateInfos = model.GetCurrentAnimatorStateInfo(0);
-        progress = stateInfos.normalizedTime;
-
-        Debug.Log(AnimationClip[0].clip.length);
-        Debug.Log(AnimationClip[0].clip.frameRate);
-        Debug.Log(progress);
-        Debug.Log(someValue);
-        */
-
-
+        Debug.Log(clipName +" "+ clipCurrentLength);
     }
 
 }
