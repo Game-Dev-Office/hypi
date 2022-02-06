@@ -7,8 +7,11 @@ public class PlayerController : MonoBehaviour
     public VariableJoystick variableJoystick;
     private CharacterController controller;
     [SerializeField]
-    private float playerSpeed = 2.0f;
-    private Vector3 playerVelocity;
+    private float playerSpeed = 5f;
+    [SerializeField]
+    private float rotationSpeed = 5f;
+    [SerializeField]
+    private float sideSpeed = 2f;
 
     private void Awake()
     {
@@ -17,17 +20,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        //Joystick Input system
-        Vector3 move = Vector3.right * variableJoystick.Horizontal;        
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        // Handle Movement
+        var direction = new Vector3(variableJoystick.Horizontal * sideSpeed, 0, playerSpeed);
+        transform.position += direction * Time.deltaTime;
 
-        //Forward force
-        playerVelocity.z = playerSpeed;
-        controller.Move(playerVelocity * Time.deltaTime);
-
-        if (move != Vector3.zero)
-        {
-            gameObject.transform.forward = move;
-        }
+        // Handle Rotation
+        var currRotation = transform.rotation;
+        var targetRotation = Quaternion.Euler(new Vector3(0, Mathf.Atan2(variableJoystick.Horizontal, variableJoystick.Vertical) * 90 / Mathf.PI, 0));
+        transform.rotation = Quaternion.Lerp(currRotation, targetRotation, Time.deltaTime * rotationSpeed);
     }
 }
