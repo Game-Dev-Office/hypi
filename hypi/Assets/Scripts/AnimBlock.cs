@@ -21,7 +21,8 @@ public class AnimBlock : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        AnimCollectable.currentLength = Test.instance.clipCurrentLength;
         blockModel.Play("capoeira");
     }
+
 }

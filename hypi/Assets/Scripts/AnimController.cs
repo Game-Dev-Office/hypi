@@ -20,10 +20,7 @@ public class AnimController : MonoBehaviour
 
 
     public Animator model;
-    public Animation mModel;
     public float animValue;
-    public float length;
-    public float currentFrame;
 
     // Start is called before the first frame update
     void Start()
@@ -34,6 +31,7 @@ public class AnimController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         if (animValue > 0)
         {
             animValue -= 1 * Time.deltaTime;
@@ -44,6 +42,7 @@ public class AnimController : MonoBehaviour
             animValue = 0;
             model.speed = 0;
         }
+        
     }
 
     private void OnTriggerEnter(Collider other)

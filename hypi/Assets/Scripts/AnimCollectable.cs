@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class AnimCollectable : MonoBehaviour
 {
-    public Animator model;
-    public AnimationClip twerkClip;
-    public AnimatorClipInfo[] twerkClipInfo;
-    public float newFrame;
-    public float newFFrame;
-
-
+    public static float currentLength;
+    public float animationSpeed = 1f;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,17 +15,14 @@ public class AnimCollectable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //newFrame = Test.instance.currentFrame;
-        AnimatorClipInfo[] twerkClip = model.GetCurrentAnimatorClipInfo(0);
-        newFrame = (100f / (twerkClip[0].weight * (twerkClip[0].clip.length * twerkClip[0].clip.frameRate)));
-        Debug.Log(newFrame);
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         AnimController.instance.animValue += 3;
-        //model.Play("Dancing Twerk");
-        model.Play("Dancing Twerk");
-        
+        Test.instance.model.Play("Dancing Twerk", 0, currentLength);
+        //Test.instance.model.SetLayerWeight(0, 1f);
+        currentLength += animationSpeed * Time.deltaTime;
     }
 }

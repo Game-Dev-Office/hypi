@@ -232,7 +232,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &381439534
 PrefabInstance:
@@ -442,7 +442,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &484864904
 MonoBehaviour:
@@ -456,10 +456,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf41c2a1caed2c4ebf279922e173646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1590282734}
-  twerkClip: {fileID: 7400000, guid: 7df4edbb58d774941b02155a6717f607, type: 2}
-  newFrame: 0
-  newFFrame: 0
+  animationSpeed: 1
 --- !u!1 &487470154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6816737599845500097, guid: fe085b52c549ff145b898a77cfa45260, type: 3}
@@ -578,7 +575,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &683176308
 MonoBehaviour:
@@ -592,10 +589,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf41c2a1caed2c4ebf279922e173646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1590282734}
-  twerkClip: {fileID: 7400000, guid: 7df4edbb58d774941b02155a6717f607, type: 2}
-  newFrame: 0
-  newFFrame: 0
+  animationSpeed: 1
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -883,8 +877,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14d531bcd6e071e4fa3af6355a7251c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currentFrame: 0
   model: {fileID: 1590282734}
+  animationSpeed: 1
+  currentFrame: 0
+  totalFrame: 0
+  frameLength: 0
+  clipTotalLength: 0
+  clipCurrentLength: 0
+  clipName: 
 --- !u!4 &1008903329
 Transform:
   m_ObjectHideFlags: 0
@@ -897,7 +897,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194415688
 GameObject:
@@ -1931,7 +1931,7 @@ Transform:
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1629364887
 MonoBehaviour:
@@ -1945,10 +1945,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fbf41c2a1caed2c4ebf279922e173646, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  model: {fileID: 1590282734}
-  twerkClip: {fileID: 7400000, guid: 7df4edbb58d774941b02155a6717f607, type: 2}
-  newFrame: 0
-  newFFrame: 0
+  animationSpeed: 1
 --- !u!224 &2026771897 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6236895672914185246, guid: cd6b14d412fbc6b4dba6d701302df09f, type: 3}
