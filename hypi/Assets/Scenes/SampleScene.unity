@@ -458,7 +458,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1590282734}
   twerkClip: {fileID: 7400000, guid: 7df4edbb58d774941b02155a6717f607, type: 2}
-  newLength: 0
+  newFrame: 0
+  newFFrame: 0
 --- !u!1 &487470154 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6816737599845500097, guid: fe085b52c549ff145b898a77cfa45260, type: 3}
@@ -593,7 +594,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1590282734}
   twerkClip: {fileID: 7400000, guid: 7df4edbb58d774941b02155a6717f607, type: 2}
-  newLength: 0
+  newFrame: 0
+  newFFrame: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -852,6 +854,51 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   offset: {x: 0, y: 0, z: -10}
   target: {fileID: 1371944656}
+--- !u!1 &1008903327
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1008903329}
+  - component: {fileID: 1008903328}
+  m_Layer: 0
+  m_Name: AnimChecker
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1008903328
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008903327}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14d531bcd6e071e4fa3af6355a7251c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentFrame: 0
+  model: {fileID: 1590282734}
+--- !u!4 &1008903329
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1008903327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.134619, y: 11.701526, z: 41.200104}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1194415688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1900,7 +1947,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   model: {fileID: 1590282734}
   twerkClip: {fileID: 7400000, guid: 7df4edbb58d774941b02155a6717f607, type: 2}
-  newLength: 0
+  newFrame: 0
+  newFFrame: 0
 --- !u!224 &2026771897 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6236895672914185246, guid: cd6b14d412fbc6b4dba6d701302df09f, type: 3}

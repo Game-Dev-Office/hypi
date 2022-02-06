@@ -22,8 +22,8 @@ public class AnimController : MonoBehaviour
     public Animator model;
     public Animation mModel;
     public float animValue;
-    public AnimatorStateInfo m_CurrentStateInfo;
     public float length;
+    public float currentFrame;
 
     // Start is called before the first frame update
     void Start()
@@ -44,14 +44,11 @@ public class AnimController : MonoBehaviour
             animValue = 0;
             model.speed = 0;
         }
-
-        length = model.GetCurrentAnimatorStateInfo(0).length;
     }
 
     private void OnTriggerEnter(Collider other)
     {
         model.Play("Dancing Twerk");
         model.speed = 0;
-        
     }
 }
